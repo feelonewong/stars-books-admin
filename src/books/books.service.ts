@@ -1,26 +1,38 @@
 import { Injectable } from '@nestjs/common';
 import { CreateBookInput } from './dto/create-book.input';
-import { UpdateBookInput } from './dto/update-book.input';
 
 @Injectable()
 export class BooksService {
   create(createBookInput: CreateBookInput) {
-    return 'This action adds a new book';
+    return [
+      {
+        exampleField: createBookInput,
+      },
+    ];
   }
 
   findAll() {
-    return `This action returns all books`;
+    // return `This action returns all books`;
+    return [
+      {
+        exampleField: 1,
+      },
+      {
+        exampleField: 2,
+      },
+      {
+        exampleField: 3,
+      },
+      {
+        exampleField: 4,
+      },
+      {
+        exampleField: 5,
+      },
+    ];
   }
 
   findOne(id: number) {
     return `This action returns a #${id} book`;
-  }
-
-  update(id: number, updateBookInput: UpdateBookInput) {
-    return `This action updates a #${id} book`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} book`;
   }
 }
